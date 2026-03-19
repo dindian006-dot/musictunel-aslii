@@ -53,7 +53,7 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename="/musictunel-aslii/">
         <AppContent />
       </Router>
     </ThemeProvider>
