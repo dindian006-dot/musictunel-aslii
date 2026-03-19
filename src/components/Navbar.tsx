@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Music, Github, Download, Menu, X, Sun, Moon } from 'lucide-react';
+import { Download, Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar() {
@@ -27,9 +27,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-white/5 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-indigo-500 flex items-center justify-center">
-            <Music className="w-5 h-5 text-white" />
-          </div>
+          <img src={import.meta.env.BASE_URL + "logo.png"} alt="MusicTunel Logo" className="w-8 h-8 object-contain" />
           <span className="font-bold text-xl tracking-tight text-zinc-900 dark:text-white">MusicTunel</span>
         </Link>
         
@@ -55,9 +53,7 @@ export default function Navbar() {
             {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
           </button>
 
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
-            <Github className="w-5 h-5" />
-          </a>
+
           <Link to="/#download" className="hidden md:flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">
             <Download className="w-4 h-4" />
             Download

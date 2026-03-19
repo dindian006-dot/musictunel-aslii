@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Download, Github, Shield, CloudOff, Smartphone, ListMusic, Zap, Radio, Settings, Heart, Play, Music } from 'lucide-react';
+import { Download, Shield, CloudOff, Smartphone, ListMusic, Zap, Radio } from 'lucide-react';
 import { FeatureCard } from '../components/Cards';
 import MockupFrame from '../components/MockupFrame';
 
@@ -17,13 +17,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-6 border border-indigo-500/20">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-              </span>
-              Latest Release v1.2.0
-            </div>
+
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1] text-zinc-900 dark:text-white">
               Your music,<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-400">
@@ -34,14 +28,15 @@ export default function Home() {
               MusicTunel is a beautiful, open-source music player for Android. Stream your favorite tracks, download for offline listening, and enjoy an ad-free experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#download" className="flex items-center justify-center gap-2 bg-indigo-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-600 transition-colors">
+              <a 
+                href="https://github.com/dindian006-dot/musictunel/releases/download/musictunel/musictunel.apk" 
+                download="musictunel.apk"
+                className="flex items-center justify-center gap-2 bg-indigo-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-600 transition-colors"
+              >
                 <Download className="w-5 h-5" />
                 Download APK
               </a>
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-zinc-100 dark:bg-white/5 text-zinc-900 dark:text-white px-8 py-4 rounded-full font-semibold hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors border border-zinc-200 dark:border-white/10">
-                <Github className="w-5 h-5" />
-                View Source
-              </a>
+
             </div>
           </motion.div>
         </div>
@@ -59,35 +54,11 @@ export default function Home() {
               className="space-y-8"
             >
               <MockupFrame>
-                <div className="p-6 flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Now Playing</div>
-                    <Settings className="w-4 h-4 text-zinc-500" />
-                  </div>
-                  <div className="aspect-square rounded-3xl bg-gradient-to-br from-indigo-500 to-purple-600 mb-8 shadow-2xl flex items-center justify-center">
-                    <Music className="w-20 h-20 text-white/20" />
-                  </div>
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold mb-1">Midnight City</h3>
-                    <p className="text-zinc-500">M83 • Hurry Up, We're Dreaming</p>
-                  </div>
-                  <div className="w-full h-1 bg-zinc-800 rounded-full mb-8 overflow-hidden">
-                    <div className="w-1/3 h-full bg-indigo-500" />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <Radio className="w-6 h-6 text-zinc-500" />
-                    <div className="flex items-center gap-6">
-                      <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                        <Play className="w-6 h-6 text-black fill-current" />
-                      </div>
-                    </div>
-                    <Heart className="w-6 h-6 text-zinc-500" />
-                  </div>
-                </div>
+                <img src={import.meta.env.BASE_URL + "home.png"} alt="Home Screen" className="w-full h-full object-cover" />
               </MockupFrame>
               <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold mb-3 text-zinc-900 dark:text-white">Beautiful Player</h3>
-                <p className="text-zinc-600 dark:text-zinc-400">A clean, immersive playback experience that puts your music front and center.</p>
+                <h3 className="text-2xl font-bold mb-3 text-zinc-900 dark:text-white">Discover New Music</h3>
+                <p className="text-zinc-600 dark:text-zinc-400">Jump right into personalized quick picks and curated recommendations based on your listening habits.</p>
               </div>
             </motion.div>
 
@@ -100,32 +71,11 @@ export default function Home() {
               className="space-y-8"
             >
               <MockupFrame>
-                <div className="p-6 flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Library</div>
-                    <div className="w-8 h-8 rounded-full bg-zinc-800" />
-                  </div>
-                  <div className="space-y-4">
-                    {[
-                      { title: "Liked Songs", count: "1,240 songs", color: "from-pink-500 to-rose-500" },
-                      { title: "Daily Mix 1", count: "50 songs", color: "from-emerald-500 to-teal-500" },
-                      { title: "Discover Weekly", count: "30 songs", color: "from-blue-500 to-indigo-500" },
-                      { title: "Release Radar", count: "20 songs", color: "from-amber-500 to-orange-500" }
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 p-3 rounded-2xl bg-zinc-900/50 border border-white/5">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color}`} />
-                        <div>
-                          <div className="font-bold text-sm">{item.title}</div>
-                          <div className="text-xs text-zinc-500">{item.count}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <img src={import.meta.env.BASE_URL + "library.png"} alt="Library Screen" className="w-full h-full object-cover" />
               </MockupFrame>
               <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold mb-3 text-zinc-900 dark:text-white">Smart Library</h3>
-                <p className="text-zinc-600 dark:text-zinc-400">Organize your music with ease. Automatic categorization and smart playlists at your fingertips.</p>
+                <h3 className="text-2xl font-bold mb-3 text-zinc-900 dark:text-white">Organized Library</h3>
+                <p className="text-zinc-600 dark:text-zinc-400">Easily find your favorites, most played tracks, and downloaded music all categorized neatly in one place.</p>
               </div>
             </motion.div>
 
@@ -138,39 +88,11 @@ export default function Home() {
               className="space-y-8"
             >
               <MockupFrame>
-                <div className="p-6 flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Settings</div>
-                  </div>
-                  <div className="space-y-6">
-                    <div className="space-y-3">
-                      <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Appearance</div>
-                      <div className="p-4 rounded-2xl bg-zinc-900/50 border border-white/5 flex items-center justify-between">
-                        <div className="text-sm">Dynamic Theming</div>
-                        <div className="w-8 h-4 bg-indigo-500 rounded-full relative">
-                          <div className="absolute right-1 top-1 w-2 h-2 bg-white rounded-full" />
-                        </div>
-                      </div>
-                      <div className="p-4 rounded-2xl bg-zinc-900/50 border border-white/5 flex items-center justify-between">
-                        <div className="text-sm">Pure Black Mode</div>
-                        <div className="w-8 h-4 bg-zinc-700 rounded-full relative">
-                          <div className="absolute left-1 top-1 w-2 h-2 bg-white rounded-full" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Audio</div>
-                      <div className="p-4 rounded-2xl bg-zinc-900/50 border border-white/5 flex items-center justify-between">
-                        <div className="text-sm">Audio Quality</div>
-                        <div className="text-xs text-indigo-400">Extreme</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <img src={import.meta.env.BASE_URL + "settings.png"} alt="Settings Screen" className="w-full h-full object-cover" />
               </MockupFrame>
               <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold mb-3 text-zinc-900 dark:text-white">Dynamic Themes</h3>
-                <p className="text-zinc-600 dark:text-zinc-400">Full Material You support. The app's colors adapt to your wallpaper and system theme.</p>
+                <h3 className="text-2xl font-bold mb-3 text-zinc-900 dark:text-white">Deep Customization</h3>
+                <p className="text-zinc-600 dark:text-zinc-400">Make it yours with advanced visual tweaks like translucent navigation bars, lyric blurs, and liquid glass modes.</p>
               </div>
             </motion.div>
           </div>
@@ -229,20 +151,14 @@ export default function Home() {
             Download MusicTunel today and take control of your music listening experience. Free and open-source forever.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-zinc-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-2xl font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors group">
+            <a href="https://github.com/dindian006-dot/musictunel/releases/download/musictunel/musictunel.apk" download="musictunel.apk" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-zinc-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-2xl font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors group">
               <Download className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
               <div className="text-left">
                 <div className="text-xs font-medium text-zinc-400 dark:text-zinc-600">Download for</div>
                 <div className="text-lg leading-none mt-0.5">Android (APK)</div>
               </div>
             </a>
-            <a href="#" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white px-8 py-4 rounded-2xl font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors group border border-zinc-200 dark:border-white/5">
-              <Github className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              <div className="text-left">
-                <div className="text-xs font-medium text-zinc-500 dark:text-zinc-400">Available on</div>
-                <div className="text-lg leading-none mt-0.5">GitHub</div>
-              </div>
-            </a>
+
           </div>
           <p className="mt-6 text-sm text-zinc-500">
             Requires Android 8.0 or later.

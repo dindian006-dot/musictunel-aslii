@@ -30,10 +30,9 @@ export default function About() {
             <div className="mt-10 flex items-center gap-4">
               <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-indigo-500/50 shadow-lg shadow-indigo-500/20">
                 <img 
-                  src="https://picsum.photos/seed/dindian-dev/200/200?grayscale" 
+                  src={import.meta.env.BASE_URL + "saya.png"} 
                   alt="dindian" 
                   className="w-full h-full object-cover scale-110"
-                  referrerPolicy="no-referrer"
                 />
               </div>
               <div>
