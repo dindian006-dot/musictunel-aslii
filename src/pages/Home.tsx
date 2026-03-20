@@ -29,7 +29,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://github.com/dindian006-dot/musictunel/releases/download/musictunel/musictunel.apk" 
+                href="https://github.com/dindian006-dot/musictunel-aslii/releases/latest/download/musictunel.apk" 
                 download="musictunel.apk"
                 className="flex items-center justify-center gap-2 bg-indigo-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-600 transition-colors"
               >
@@ -151,7 +151,7 @@ export default function Home() {
             Download MusicTunel today and take control of your music listening experience. Free and open-source forever.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://github.com/dindian006-dot/musictunel/releases/download/musictunel/musictunel.apk" download="musictunel.apk" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-zinc-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-2xl font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors group">
+            <a href="https://github.com/dindian006-dot/musictunel-aslii/releases/latest/download/musictunel.apk" download="musictunel.apk" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-zinc-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-2xl font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors group">
               <Download className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
               <div className="text-left">
                 <div className="text-xs font-medium text-zinc-400 dark:text-zinc-600">Download for</div>
