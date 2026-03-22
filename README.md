@@ -5,23 +5,6 @@ A FOSS YouTube Music client for Android and Desktop with many features from<br>S
 <br> 
 <br>
 
-<a href="https://github.com/dindian006/MusicTunel/releases">
-<img src="https://img.shields.io/github/v/release/dindian006/MusicTunel">
-</a>
-
-<a href="https://github.com/dindian006/MusicTunel/releases">
-<img src="https://img.shields.io/github/downloads/dindian006/MusicTunel/total">
-</a>
-
-<br> <br>
-
-<a href="https://trendshift.io/repositories/13482" target="_blank">
-<img src="https://trendshift.io/api/badge/repositories/13482" alt="dindian006%2FMusicTunel | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
-</a>
-
-<br>
-<br>
-
 <a href="https://www.producthunt.com/products/musictunel/reviews?utm_source=badge-product_rating&utm_medium=badge&utm_source=badge-musictunel" target="_blank">
 <img src="https://api.producthunt.com/widgets/embed-image/v1/product_rating.svg?product_id=903836&theme=dark" alt="MusicTunel - A FOSS YouTube Music client for Android with many features | Product Hunt" style="width: 242px; height: 108px;" width="242" height="108" />
 </a>
