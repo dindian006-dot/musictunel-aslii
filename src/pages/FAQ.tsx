@@ -44,7 +44,7 @@ export default function FAQ() {
   const faqs = [
     {
       question: "What is MusicTunel?",
-      answer: "MusicTunel is a free, open-source music player for Android based on SimpMusic. It allows you to stream music from YouTube Music without ads and provides a beautiful Material You interface."
+      answer: "MusicTunel is a free, open-source music player for Android. It allows you to stream music from YouTube Music without ads and provides a beautiful Material You interface."
     },
     {
       question: "Is MusicTunel free to use?",

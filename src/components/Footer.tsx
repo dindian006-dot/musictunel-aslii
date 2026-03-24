@@ -10,7 +10,7 @@ export default function Footer() {
           <span className="font-semibold text-zinc-900 dark:text-zinc-300">MusicTunel</span>
         </div>
         <p>
-          Based on the open-source SimpMusic project. Not affiliated with YouTube or Google.
+          Not affiliated with YouTube or Google.
         </p>
         <div className="flex items-center gap-4">
           <Link to="/privacy" className="hover:text-zinc-900 dark:hover:text-white transition-colors">Privacy Policy</Link>
