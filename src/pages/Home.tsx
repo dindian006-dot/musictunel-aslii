@@ -3,8 +3,10 @@ import { motion } from 'motion/react';
 import { Download, Shield, CloudOff, Smartphone, ListMusic, Zap, Radio } from 'lucide-react';
 import { FeatureCard } from '../components/Cards';
 import MockupFrame from '../components/MockupFrame';
+import { useDownloadModal } from '../context/DownloadModalContext';
 
 export default function Home() {
+  const { openDownloadModal } = useDownloadModal();
   return (
     <>
       {/* Hero Section */}
@@ -28,14 +30,13 @@ export default function Home() {
               MusicTunel is a beautiful, open-source music player for Android. Stream your favorite tracks, download for offline listening, and enjoy an ad-free experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href={import.meta.env.BASE_URL + "musictunel.apk"} 
-                download="musictunel.apk"
+              <button 
+                onClick={openDownloadModal}
                 className="flex items-center justify-center gap-2 bg-indigo-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-600 transition-colors"
               >
                 <Download className="w-5 h-5" />
                 Download APK
-              </a>
+              </button>
 
             </div>
           </motion.div>
@@ -151,13 +152,16 @@ export default function Home() {
             Download MusicTunel today and take control of your music listening experience. Free and open-source forever.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={import.meta.env.BASE_URL + "musictunel.apk"} download="musictunel.apk" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-zinc-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-2xl font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors group">
+            <button 
+              onClick={openDownloadModal}
+              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-zinc-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-2xl font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors group"
+            >
               <Download className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
               <div className="text-left">
                 <div className="text-xs font-medium text-zinc-400 dark:text-zinc-600">Download for</div>
                 <div className="text-lg leading-none mt-0.5">Android (APK)</div>
               </div>
-            </a>
+            </button>
 
           </div>
           <p className="mt-6 text-sm text-zinc-500">

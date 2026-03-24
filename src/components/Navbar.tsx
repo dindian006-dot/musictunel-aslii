@@ -3,11 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Download, Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { useDownloadModal } from '../context/DownloadModalContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const { openDownloadModal } = useDownloadModal();
 
   const navLinks = [
     { name: 'Features', path: '/#features' },
@@ -54,10 +56,13 @@ export default function Navbar() {
           </button>
 
 
-          <Link to="/#download" className="hidden md:flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">
+          <button 
+            onClick={openDownloadModal}
+            className="hidden md:flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors"
+          >
             <Download className="w-4 h-4" />
             Download
-          </Link>
+          </button>
           
           {/* Mobile Menu Toggle */}
           <button 
@@ -106,10 +111,16 @@ export default function Navbar() {
                 </div>
               </button>
 
-              <Link to="/#download" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-black px-4 py-3 rounded-xl text-center justify-center font-semibold mt-2">
+              <button 
+                onClick={() => {
+                  openDownloadModal();
+                  setIsMenuOpen(false);
+                }}
+                className="flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-black px-4 py-3 rounded-xl text-center justify-center font-semibold mt-2"
+              >
                 <Download className="w-4 h-4" />
                 Download APK
-              </Link>
+              </button>
             </div>
           </motion.div>
         )}

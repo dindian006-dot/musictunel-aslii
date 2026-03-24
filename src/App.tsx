@@ -9,6 +9,9 @@ import FAQ from './pages/FAQ';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { DownloadModalProvider } from './context/DownloadModalContext';
+import DownloadModal from './components/DownloadModal';
+
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -45,6 +48,7 @@ function AppContent() {
           <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </main>
+      <DownloadModal />
       <Footer />
     </div>
   );
@@ -53,9 +57,11 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <Router basename="/">
-        <AppContent />
-      </Router>
+      <DownloadModalProvider>
+        <Router basename="/">
+          <AppContent />
+        </Router>
+      </DownloadModalProvider>
     </ThemeProvider>
   );
 }
